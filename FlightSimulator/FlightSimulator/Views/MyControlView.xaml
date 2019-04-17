@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:FlightSimulator.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="450">
-    <Grid Background="White">
+    <Border BorderBrush ="Gray" BorderThickness="1">
+        <Grid  Background="White" Margin="30,0,0,0" >
         <Grid.RowDefinitions>
             <RowDefinition Height = "Auto"/>
             <RowDefinition Height= "*"/>
@@ -93,6 +94,7 @@
         <TextBlock x:Name="valuesAileron" 
             FontSize="16" FontWeight="Bold"  
             Text="{Binding }" Margin="338,14,68,397" Grid.Row="1" RenderTransformOrigin="-0.155,-0.454"  />
-    </Grid>
+        </Grid>
+    </Border>
 </UserControl>
 

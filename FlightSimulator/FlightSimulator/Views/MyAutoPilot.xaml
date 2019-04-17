@@ -12,7 +12,8 @@
             <RowDefinition Height="43*"/>
         </Grid.RowDefinitions>
         <TextBox x:Name="text" Padding="3" Margin="10,10,10,99" BorderBrush="DodgerBlue" TextChanged="Text_TextChanged" Grid.RowSpan="2"></TextBox>
-        <Button x:Name="btnOkPilot" HorizontalAlignment="Center" Click="btnCancel_Click_1" Margin="170,95,287,30" Padding="3" Width="43" BorderBrush="Black" BorderThickness="1" Grid.Row="1" FontSize="16" FontFamily="Verdana" FontWeight="Bold" >Ok</Button>
+        <!-- Cool comment <Button x:Name="btnOkPilot" HorizontalAlignment="Center" Click="btnCancel_Click_1" Margin="170,95,287,30" Padding="3" Width="43" BorderBrush="Black" BorderThickness="1" Grid.Row="1" FontSize="16" FontFamily="Verdana" FontWeight="Bold" >Ok</Button>
         <Button x:Name="btnClearPilot" HorizontalAlignment="Center" Click="btnCancel_Click_1" Margin="265,95,178,30" Padding="3" Width="57" BorderBrush="Black" BorderThickness="1" Grid.Row="1" FontSize="16" FontFamily="Verdana" FontWeight="Bold" >Clear</Button>
+        -->
     </Grid>
 </UserControl>

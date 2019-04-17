@@ -35,15 +35,16 @@ namespace FlightSimulator.Model
             
             isListening = true;
             Console.WriteLine("Waiting for client connections...");
-    
 
+            /*
             Thread thread = new Thread(() => {
                 while (isListening)
                 {
                     listener.Start();
-                    
+
                 }
             }
+            */
 
         }
     }

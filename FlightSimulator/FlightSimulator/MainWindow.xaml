@@ -4,9 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightSimulator"
+        xmlns:import="clr-namespace:FlightSimulator.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="900" Width="900">
+
     <Grid>
-        
+        <Viewbox Margin="0,0,-0.4,0.4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="17.218"/>
+                    <ColumnDefinition Width="12.382"/>
+                    <ColumnDefinition Width="10.203"/>
+                    <ColumnDefinition Width="45.758"/>
+                    <ColumnDefinition Width="414.439"/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="480,-17,0.333,446.4" Width="60" HorizontalAlignment="Center" Click="Button_Click" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="4" >Manual</Button>
+                <Button Margin="9.919,-17,398.53,446.4" Width="62" HorizontalAlignment="Center" Click="Button_Click" BorderBrush="Gray" BorderThickness="1" Grid.Column="3" Grid.ColumnSpan="3" >Auto Pilot</Button>
+
+                <import:MyFlightBoard Grid.Column="0" Margin="25,0,25.049,0.4"></import:MyFlightBoard>
+                <import:MyControlView Margin="480,4,31.53,-4.6" Grid.ColumnSpan="6" RenderTransformOrigin="0.5,0.5">
+                    <import:MyControlView.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="0.16"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="0.668"/>
+                        </TransformGroup>
+                    </import:MyControlView.RenderTransform>
+                </import:MyControlView>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Window>
