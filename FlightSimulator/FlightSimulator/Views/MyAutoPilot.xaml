@@ -6,13 +6,13 @@
              xmlns:local="clr-namespace:FlightSimulator.Views"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="500">
-    <Grid Background="White">
+    <Grid Background="{Binding Path=VM_Background_Change ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
         <Grid.RowDefinitions>
             <RowDefinition Height="107*"/>
             <RowDefinition Height="43*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="text" Padding="3" Margin="10,10,10,99" BorderBrush="DodgerBlue" TextChanged="Text_TextChanged" Grid.RowSpan="2"></TextBox>
-        <Button x:Name="btnOkPilot" HorizontalAlignment="Center" Click="btnCancel_Click_1" Margin="170,95,287,30" Padding="3" Width="43" BorderBrush="Black" BorderThickness="1" Grid.Row="1" FontSize="16" FontFamily="Verdana" FontWeight="Bold" >Ok</Button>
-        <Button x:Name="btnClearPilot" HorizontalAlignment="Center" Click="btnCancel_Click_1" Margin="265,95,178,30" Padding="3" Width="57" BorderBrush="Black" BorderThickness="1" Grid.Row="1" FontSize="16" FontFamily="Verdana" FontWeight="Bold" >Clear</Button>
+        <TextBox x:Name="text" Text="{Binding Path=VM_TextBoxCommands ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Padding="3" Margin="6,10,10,92" BorderBrush="DodgerBlue" TextChanged="Text_TextChanged" Grid.RowSpan="2"></TextBox>
+        <Button x:Name="okButten" Command="{Binding okCommandButton}" HorizontalAlignment="Center" Click="btnCancel_Click_1" Margin="170,95,287,30" Padding="3" Width="43" BorderBrush="Black" BorderThickness="1" Grid.Row="1" FontSize="16" FontFamily="Verdana" FontWeight="Bold" >Ok</Button>
+        <Button x:Name="clearButten" Command="{Binding clearCommandButton}" HorizontalAlignment="Center" Click="btnCancel_Click_1" Margin="265,95,178,30" Padding="3" Width="57" BorderBrush="Black" BorderThickness="1" Grid.Row="1" FontSize="16" FontFamily="Verdana" FontWeight="Bold" >Clear</Button>
     </Grid>
 </UserControl>
