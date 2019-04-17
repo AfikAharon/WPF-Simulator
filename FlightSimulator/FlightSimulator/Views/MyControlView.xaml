@@ -13,22 +13,86 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
-        <local:Joystick Grid.Row="1" Grid.Column="1" Loaded="FlightBoard_Loaded"/>
+        <local:Joystick x:Name="myJoystick" Grid.Row="1" Loaded="FlightBoard_Loaded" Margin="-11,-19,-36,-9"/>
         <TextBlock Name="aileronButton" Height="30" Width="108"  
              FontSize="16" FontFamily="Verdana" FontWeight="Bold"  
              Text=" ← aileron →"  
-             Margin="168,10,0,0" VerticalAlignment="Top"  
+             Margin="182,10,0,0" VerticalAlignment="Top"  
              HorizontalAlignment="Left" Grid.Row="1" RenderTransformOrigin="0.275,0.244">
         </TextBlock>
-        <TextBlock Name="rudderButton" Height="30" Width="108"  
+        <TextBlock Name="rudderButton" Height="30"  
              FontSize="16" FontFamily="Verdana" FontWeight="Bold"  
              Text=" ← rudder →"  
-             Margin="168,410,0,0" VerticalAlignment="Top"  
-             HorizontalAlignment="Left" Grid.Row="1" RenderTransformOrigin="0.275,0.244">
+             Margin="183,420,159,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.5,0.5"/>
+        <StackPanel/>
+        <Slider x:Name="throttleSlider" TickPlacement="BottomRight" 
+                TickFrequency="0.1" Margin="-69,186,254,200" ValueChanged="Slider_ValueChanged" 
+                RenderTransformOrigin="0.5,0.5" Grid.Row="1"  Maximum="1" Minimum="-1">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <Slider x:Name="rudderSlider" TickPlacement="TopLeft" 
+                TickFrequency="0.1" Margin="119,357,66,29" ValueChanged="Slider_ValueChanged" 
+                IsSnapToTickEnabled="True"
+                RenderTransformOrigin="0.5,0.5" Grid.Row="1"
+                Maximum="1" Minimum="-1">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.802"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <TextBlock x:Name="throttle" Height="30" Width="108"  
+            FontSize="16" FontFamily="Verdana" FontWeight="Bold"  
+            Text=" ← throttle →"  
+            Margin="-4,172,0,0" VerticalAlignment="Top"  
+            HorizontalAlignment="Left" Grid.Row="1" RenderTransformOrigin="-0.324,1.277">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.897"/>
+                    <TranslateTransform X="33.587" Y="-95.628"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
         </TextBlock>
-        <StackPanel>
-
-        </StackPanel>
+        <TextBlock x:Name="elevator" Height="30" Width="123" 
+            FontSize="16" FontFamily="Verdana" FontWeight="Bold"  
+            Text=" ← elevator →"  
+            Margin="410,171,-83,0" VerticalAlignment="Top"  
+            HorizontalAlignment="Left" Grid.Row="1" RenderTransformOrigin="-0.324,1.277">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.897"/>
+                    <TranslateTransform X="33.587" Y="-95.628"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="valuesRudder" Height="30" 
+            Text="{Binding rudderSlider,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+            FontSize="16" FontWeight="Bold"  
+            Margin="400,365,9,55" Grid.Row="1" RenderTransformOrigin="-0.155,-0.454"  />
+        <TextBlock x:Name="valuesThrottle" Height="30" 
+            Text="{Binding throttleSlider,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+            FontSize="16" FontWeight="Bold"  
+            Margin="52,30,357,390" Grid.Row="1" RenderTransformOrigin="-0.155,-0.454"  />
+        <TextBlock x:Name="valuesElevator" Height="30" 
+            FontSize="16" FontWeight="Bold"  
+            Text="{Binding }" Margin="399,62,10,358" Grid.Row="1" RenderTransformOrigin="-0.155,-0.454"  />
+        <TextBlock x:Name="valuesAileron" 
+            FontSize="16" FontWeight="Bold"  
+            Text="{Binding }" Margin="338,14,68,397" Grid.Row="1" RenderTransformOrigin="-0.155,-0.454"  />
     </Grid>
-
 </UserControl>
+
