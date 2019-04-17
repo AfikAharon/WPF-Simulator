@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlightSimulator.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,19 +21,13 @@ namespace FlightSimulator.Views
     /// </summary>
     public partial class MyAutoPilot : UserControl
     {
+        private MyAutoPilotViewModel vm;
+
         public MyAutoPilot()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Text_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            vm = new MyAutoPilotViewModel();
+            this.DataContext = vm;
         }
     }
 }

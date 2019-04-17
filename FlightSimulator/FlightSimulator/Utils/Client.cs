@@ -10,18 +10,15 @@ namespace FlightSimulator
     class Client
     {
         private TcpClient tcpClient;
-        private bool stillSending;
         private String[] listOfCommands;
 
         public Client() {
             tcpClient = new TcpClient();
             tcpClient.Connect("127.0.0.1", 5402);
-            stillSending = false;
         }
 
-        public void sendCommands()
+        public void handleCommand()
         {
-            stillSending = true;
             NetworkStream stream = tcpClient.GetStream();
             ASCIIEncoding encoding = new ASCIIEncoding();
             foreach (string com in listOfCommands)
@@ -31,7 +28,6 @@ namespace FlightSimulator
                 stream.Flush();
                 System.Threading.Thread.Sleep(1000);
             }
-            stillSending = false;
         }
 
 
@@ -39,12 +35,5 @@ namespace FlightSimulator
         {
             listOfCommands = commands;
         }
-
-        public bool getIfStillSending()
-        {
-            return stillSending;
-        }
     }
-
-
 }
