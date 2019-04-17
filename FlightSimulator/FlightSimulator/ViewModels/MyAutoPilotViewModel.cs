@@ -42,7 +42,7 @@ namespace FlightSimulator.ViewModels
         {
             get
             {
-                return _clearCommand ?? (_clearCommand = new CommandHandler(() => sendCommands()));
+                return _clearCommand ?? (_clearCommand = new CommandHandler(() => clearCommands()));
             }
         }
 
@@ -76,6 +76,7 @@ namespace FlightSimulator.ViewModels
         public void sendCommands()
         {
             Thread handle = new Thread(model.Start);
+            handle.Start();
         }
 
         public void clearCommands()
