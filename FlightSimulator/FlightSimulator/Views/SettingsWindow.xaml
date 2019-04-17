@@ -24,14 +24,8 @@
         <TextBox x:Name="txtFlightInfo" Grid.Row="1" Grid.Column="2" Padding="3" Margin="3"></TextBox>
         <TextBlock Grid.Row ="2" Padding="3" Margin="3">Flight Command Port:</TextBlock>
         <TextBox x:Name="txtFlightCommand" Grid.Row="2" Grid.Column="2" Padding="3" Margin="3"></TextBox>
-
-        
-
         <Button x:Name="btnCancel" Grid.Row ="3" HorizontalAlignment="Center" Click="btnCancel_Click_1" Margin="75,25.8,21,-15.8" Padding="3" Width="50" BorderBrush="Black" BorderThickness="1">Ok</Button>
         <Button x:Name="btnCanel" Grid.Row ="3" HorizontalAlignment="Center" Click="btnCanel_Click" Margin="34.6,25.8,56.6,-15.8" Padding="3" Width="56" BorderBrush="Black" BorderThickness="1" Grid.Column="1">Cancel</Button>
-
-
-
 
     </Grid>
 </Window>
