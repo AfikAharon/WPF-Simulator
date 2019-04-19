@@ -16,6 +16,7 @@ namespace FlightSimulator.Model
         public MyAutoPilotModel()
         {
             //client = Client.Instance;
+            listOfCommands = "";
             Background_Change = Background_Change = Brushes.White;
         }
 
@@ -49,11 +50,13 @@ namespace FlightSimulator.Model
         public void Start()
         {
             Client client = Client.Instance;
-            Background_Change = Brushes.Pink;
-            String[] commands = listOfCommands.Split('\n');
-            client.setListOfCommands(commands);
-            client.handleCommand();
-            Background_Change = Brushes.White;
+            if (ListOfCommands != "" && client.isConnected()) { 
+                Background_Change = Brushes.Pink;
+                String[] commands = listOfCommands.Split('\n');
+                client.setListOfCommands(commands);
+                client.handleCommand();
+                Background_Change = Brushes.White;
+            }
         }
     }
 }

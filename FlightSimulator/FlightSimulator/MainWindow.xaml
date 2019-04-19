@@ -18,10 +18,10 @@
         </DockPanel>
         <DockPanel Grid.Column="1" >
             <TabControl>
-                <TabItem Width="80" Height="40" Header="Manual">
+                <TabItem Width="80" Height="40" Header="Auto Pilot">
                     <import:MyAutoPilot/>
                 </TabItem>
-                <TabItem Width="80" Height="40" Header="Auto Pilot">
+                <TabItem Width="80" Height="40" Header="Manual">
                     <import:MyControlView/>
                 </TabItem>
 

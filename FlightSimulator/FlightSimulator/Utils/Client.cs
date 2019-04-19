@@ -63,5 +63,10 @@ namespace FlightSimulator
             }
             tcpClient.Connect(portAndIp.FlightServerIP, portAndIp.FlightCommandPort);
         }
+
+        public bool isConnected()
+        {
+            return tcpClient.Connected;
+        }
     }
 }
