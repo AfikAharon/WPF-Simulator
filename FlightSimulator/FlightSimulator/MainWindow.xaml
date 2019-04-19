@@ -14,20 +14,19 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0">
-            <import:MyFlightBoard></import:MyFlightBoard>
+            <import:FlightBoard></import:FlightBoard>
         </DockPanel>
         <DockPanel Grid.Column="1" >
             <TabControl>
                 <TabItem Width="80" Height="40" Header="Manual">
                     <import:MyAutoPilot/>
-                    </TabItem>
-                    <TabItem Width="80" Height="40" Header="Auto Pilot">
-                        <import:MyControlView/>
-                    </TabItem>
+                </TabItem>
+                <TabItem Width="80" Height="40" Header="Auto Pilot">
+                    <import:MyControlView/>
+                </TabItem>
 
-                </TabControl>
+            </TabControl>
         </DockPanel>
-            
-    </Grid>
 
+    </Grid>
 </Window>

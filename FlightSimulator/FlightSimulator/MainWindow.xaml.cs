@@ -24,9 +24,9 @@ namespace FlightSimulator
             InitializeComponent();
         }
 
-        private void MyFlightBoard_Loaded(object sender, RoutedEventArgs e)
-        {
+        //private void MyFlightBoard_Loaded(object sender, RoutedEventArgs e)
+        //{
 
-        }
+       // }
     }
 }

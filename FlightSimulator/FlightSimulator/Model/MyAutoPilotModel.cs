@@ -10,12 +10,12 @@ namespace FlightSimulator.Model
     class MyAutoPilotModel : IModelNotify
     {
         private String listOfCommands;
-        private Client client;
+        //private Client client;
         private Brush background;
 
         public MyAutoPilotModel()
         {
-            client = new Client();
+            //client = Client.Instance;
             Background_Change = Background_Change = Brushes.White;
         }
 
@@ -48,6 +48,7 @@ namespace FlightSimulator.Model
 
         public void Start()
         {
+            Client client = Client.Instance;
             Background_Change = Brushes.Pink;
             String[] commands = listOfCommands.Split('\n');
             client.setListOfCommands(commands);

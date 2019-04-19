@@ -6,9 +6,16 @@
              xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
              xmlns:local="clr-namespace:FlightSimulator.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
-    <Grid>
-        <Grid.Resources>
+            d:DesignHeight="500" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <Grid Background="White" Margin ="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "35"/>
+            <RowDefinition Height= "*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Margin="156,0,230.6,0.2" Width="63" HorizontalAlignment="Center" Command="{Binding connectCommandButton}" BorderBrush="Black" BorderThickness="1" >Connect</Button>
+        <Button Grid.Row="0" Margin="100,0,30,0" Width="50" HorizontalAlignment="Center" Command="{Binding settingCommandButton}" BorderBrush="Black" BorderThickness="1" >Settings</Button>
+        <Grid Grid.Row="1">
+            <Grid.Resources>
             <Style TargetType="TextBlock" x:Key="LabelStyle">
                 <Setter Property="FontSize" Value="20" />
                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -30,5 +37,6 @@
         <d3:ChartPlotter Grid.Row="0" Grid.Column="1" LegendVisible="False" Name="plotter">
         </d3:ChartPlotter>
         <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource LabelStyle}" HorizontalAlignment="Center">Lat</TextBlock>
+    </Grid>
     </Grid>
 </UserControl>

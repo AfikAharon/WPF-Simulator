@@ -85,3 +85,11 @@ namespace FlightSimulator.ViewModels
         }
     }
 }
+
+
+/*
+set controls/flight/rudder -1
+set controls/flight/rudder 1
+set controls/flight/rudder -1
+set controls/flight/rudder 1
+*/
