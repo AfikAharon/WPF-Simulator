@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlightSimulator.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,17 +21,25 @@ namespace FlightSimulator.Views
     /// </summary>
     public partial class MyControlView : UserControl
     {
+        private JoystickViewModel vm;
         public MyControlView()
         {
             InitializeComponent();
+            vm = new JoystickViewModel();
+            this.DataContext = vm;
         }
-
+        
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
         }
 
         private void FlightBoard_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MyJoystick_MouseMove(object sender, MouseEventArgs e)
         {
 
         }
