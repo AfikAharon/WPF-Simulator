@@ -15,7 +15,6 @@ namespace FlightSimulator.Model
 
         public MyAutoPilotModel()
         {
-            //client = Client.Instance;
             listOfCommands = "";
             Background_Change = Background_Change = Brushes.White;
         }

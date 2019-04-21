@@ -61,6 +61,8 @@ namespace FlightSimulator
             {
                 tcpClient.Close();
             }
+            TcpServer tcpServer = TcpServer.Instance;
+            while (tcpServer.notConncted()) ;
             tcpClient.Connect(portAndIp.FlightServerIP, portAndIp.FlightCommandPort);
         }
 

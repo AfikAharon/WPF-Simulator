@@ -26,14 +26,30 @@ namespace FlightSimulator.ViewModels
             };
         }
         
-        public double Lon
+        public double VM_Lon
         {
-            get { return 0; }
+            get
+            {
+                return model.Lon;
+            }
+            set
+            {
+                model.Lon = value;
+                NotifyPropertyChanged("VM_Lon");
+            }
         }
 
-        public double Lat
+        public double VM_Lat
         {
-            get { return 0; }
+            get
+            {
+                return model.Lat;
+            }
+            set
+            {
+                model.Lat = value;
+                NotifyPropertyChanged("VM_Lat");
+            }
         }
 
         
@@ -44,8 +60,6 @@ namespace FlightSimulator.ViewModels
                 return _settingCommand ?? (_settingCommand = new CommandHandler(() => settingButton()));
             }
         }
-        
-
 
         
         public ICommand connectCommandButton

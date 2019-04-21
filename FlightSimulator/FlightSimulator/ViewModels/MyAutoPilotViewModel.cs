@@ -59,6 +59,8 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+
+
         public String VM_TextBoxCommands
         {
             get

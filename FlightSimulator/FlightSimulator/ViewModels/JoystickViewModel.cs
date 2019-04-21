@@ -102,7 +102,6 @@ namespace FlightSimulator.ViewModels
             Thread handle = new Thread(model.moveElevator);
             handle.Start();
         }
-
     }
 
 

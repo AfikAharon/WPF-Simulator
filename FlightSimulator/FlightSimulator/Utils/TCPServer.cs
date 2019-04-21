@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FlightSimulator.Model.Interface;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -13,39 +15,79 @@ namespace FlightSimulator.Model
     public class TcpServer
     {
         private IPEndPoint ep;
-        TcpListener listener;
-        private CommandHandler handler;
-        private bool isListening;
 
+        private bool running; 
 
-        public TcpServer(CommandHandler commandHandler, int port)
+        #region Singleton
+        private static TcpServer s_Instance = null;
+        private bool _notConnected;
+
+        public static TcpServer Instance
         {
-            handler = commandHandler;
-            isListening = false;
-            ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
-            listener = new TcpListener(ep);
-
+            get
+            {
+                if (s_Instance == null)
+                {
+                    s_Instance = new TcpServer();
+                }
+                return s_Instance;
+            }
         }
 
-   
-        
+       
 
-        public void startServer()
+        #endregion
+        private TcpServer()
         {
-            
-            isListening = true;
-            Console.WriteLine("Waiting for client connections...");
+            running = false;
+            _notConnected = true;
+        }
 
-            /*
-            Thread thread = new Thread(() => {
-                while (isListening)
+
+
+        public void Start(FlightBoardModel flightBoard,bool shouldStop)
+        {
+            if (! running) { 
+                ISettingsModel app = ApplicationSettingsModel.Instance;
+                //IPEndPoint ep = new IPEndPoint(IPAddress.Parse(app.FlightServerIP), app.FlightInfoPort);
+                //TcpListener listener = new TcpListener(ep);
+                //listener.Start();
+                //Console.WriteLine("Waiting for a client");
+                //TcpClient client = listener.AcceptTcpClient();
+                //Console.WriteLine("Client connected");
+
+                
+
+                //connect to the simulator
+                TcpListener server = new TcpListener(IPAddress.Parse(app.FlightServerIP), app.FlightInfoPort);
+                
+                server.Start();
+
+                //wait till we have a connection
+                TcpClient client = server.AcceptTcpClient();
+                _notConnected = false;
+                NetworkStream stream = client.GetStream();
+
+                while (!shouldStop)
                 {
-                    listener.Start();
+                    byte[] buffer = new byte[client.ReceiveBufferSize];
+                    int bytesRead = stream.Read(buffer, 0, client.ReceiveBufferSize);
+                    string received = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
+                    Console.WriteLine("Received from client:" + received);
+
+                    
+                    string[] values = received.Split(',');
+                    flightBoard.Lon = Convert.ToDouble(values[0]);
+                    flightBoard.Lat = Convert.ToDouble(values[1]);
                 }
             }
-            */
+            _notConnected = true;
+        }
 
+        public bool notConncted()
+        {
+            return _notConnected;
         }
     }
 }
