@@ -42,6 +42,8 @@ namespace FlightSimulator.Views
             planeLocations.SetXYMapping(p => p);
 
             plotter.AddLineGraph(planeLocations, 2, "Route");
+
+            vm.PropertyChanged += Vm_PropertyChanged;
         }
 
         private void Vm_PropertyChanged(object sender, PropertyChangedEventArgs e)

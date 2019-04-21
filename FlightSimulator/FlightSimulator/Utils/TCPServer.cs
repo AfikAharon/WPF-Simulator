@@ -78,8 +78,10 @@ namespace FlightSimulator.Model
 
                     
                     string[] values = received.Split(',');
-                    flightBoard.Lon = Convert.ToDouble(values[0]);
-                    flightBoard.Lat = Convert.ToDouble(values[1]);
+                    double x = Convert.ToDouble(values[0]);
+                    double y = Convert.ToDouble(values[1]);
+                    flightBoard.Lon = x;
+                    flightBoard.Lat = y;
                 }
             }
             _notConnected = true;
