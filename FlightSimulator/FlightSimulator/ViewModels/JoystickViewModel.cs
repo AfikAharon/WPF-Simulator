@@ -38,6 +38,20 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        public String VM_Aileron_Value
+        {
+            get
+            {
+                return model.Aileron_Val;
+            }
+
+            set
+            {
+                model.Aileron_Val = value;
+                NotifyPropertyChanged("VM_Aileron_Val");
+            }
+        }
+
         public Double VM_Aileron_Change
         {
             get

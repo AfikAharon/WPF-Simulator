@@ -9,28 +9,29 @@
     <Border BorderBrush ="Gray" BorderThickness="1">
         <Grid  Background="White" Margin="30,0,0,0" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="51*"/>
-                <ColumnDefinition Width="116*"/>
+                <ColumnDefinition Width="203*"/>
+                <ColumnDefinition Width="326*"/>
+                <ColumnDefinition Width="138*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height = "100"/>
                 <RowDefinition Height= "450"/>
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
-            <local:Joystick x:Name="myJoystick" Grid.Row="0" Loaded="FlightBoard_Loaded" Margin="0,0,0.6,-0.4"  Aileron="{Binding Path=VM_Aileron_Change, Mode=OneWayToSource}" Elevator="{Binding VM_Elevator_Change ,Mode=OneWayToSource}" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+            <local:Joystick x:Name="myJoystick" Grid.Row="0" Loaded="FlightBoard_Loaded" Margin="0,0,0.2,-0.4"  Aileron="{Binding Path=VM_Aileron_Change,UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" Elevator="{Binding VM_Elevator_Change, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
             <TextBlock Name="aileronButton" Height="42" Width="121" 
              FontSize="18" FontFamily="Verdana" FontWeight="Bold"  
              Text="← aileron →"  
-             Margin="73.4,48,0,0" VerticalAlignment="Top"  
+             Margin="73.8,48,0,0" VerticalAlignment="Top"  
              HorizontalAlignment="Left" RenderTransformOrigin="0.275,0.244" Grid.Column="1"/>
             <TextBlock Name="rudderButton" Height="42"  
              FontSize="18" FontFamily="Verdana" FontWeight="Bold"  
              Text=" ← rudder →"  
-             Margin="73.4,25.4,262.6,0" VerticalAlignment="Top" Grid.Row="2" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+             Margin="73.8,25.4,124.2,0" VerticalAlignment="Top" Grid.Row="2" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             </TextBlock>
-            <StackPanel Margin="0,0,0.6,100" Grid.ColumnSpan="2" />
+            <StackPanel Margin="0,0,0.2,100" Grid.ColumnSpan="3" />
             <Slider x:Name="throttleSlider" TickPlacement="BottomRight" 
-                TickFrequency="0.1" Margin="-78,167,415.6,246.6" Value="{Binding Path=VM_Throttle_Change}" 
+                TickFrequency="0.1" Margin="-78,167,277.2,246.6" Value="{Binding Path=VM_Throttle_Change}" 
                 RenderTransformOrigin="0.5,0.5" Grid.Row="1"  Minimum="-1" Maximum="1" Grid.ColumnSpan="2">
                 <Slider.RenderTransform>
                     <TransformGroup>
@@ -42,10 +43,10 @@
                 </Slider.RenderTransform>
             </Slider>
             <Slider x:Name="rudderSlider" TickPlacement="TopLeft"  Value="{Binding Path=VM_Rudder_Change}"
-                TickFrequency="0.1" Margin="127,407,136.6,94.6" 
+                TickFrequency="0.1" Margin="127,407,136.2,94.6" 
                 IsSnapToTickEnabled="True"
                 RenderTransformOrigin="0.5,0.5" Grid.Row="1"
-                Minimum="-1" Maximum="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                Minimum="-1" Maximum="1" Grid.RowSpan="2" Grid.ColumnSpan="3">
                 <Slider.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -72,8 +73,8 @@
             <TextBlock x:Name="elevator" Height="30" Width="149" 
             FontSize="18" FontFamily="Verdana" FontWeight="Bold"  
             Text=" ← elevator →"  
-            Margin="378.4,157,-63.4,0" VerticalAlignment="Top"  
-            HorizontalAlignment="Left" Grid.Row="1" RenderTransformOrigin="-0.324,1.277" Grid.Column="1">
+            Margin="52.8,157,-63.8,0" VerticalAlignment="Top"  
+            HorizontalAlignment="Left" Grid.Row="1" RenderTransformOrigin="-0.324,1.277" Grid.Column="2">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -83,31 +84,22 @@
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <TextBlock x:Name="valuesRudder" 
-            Text="{Binding Path=VM_Rudder_Change,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+
+            <Label x:Name="valuesRudder" 
+            Content="{Binding Path = VM_Rudder_Change,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
             FontSize="18" FontWeight="Bold"  
-            Margin="332.8,412,36.2,73.6" Grid.Row="1" RenderTransformOrigin="-0.155,-0.454" Grid.Column="1" Grid.RowSpan="2"  >
-                <TextBlock.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.208"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBlock.RenderTransform>
-            </TextBlock>
-            <TextBlock x:Name="valuesThrottle" 
-            Text="{Binding Path = VM_Throttle_Change ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+            Margin="6.8,412,36.2,73.6" Grid.Row="1" RenderTransformOrigin="-0.155,-0.454" Grid.Column="2" Grid.RowSpan="2"/>
+            <Label x:Name="valuesThrottle" 
+            Content="{Binding Path = VM_Throttle_Change ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
             FontSize="16" FontWeight="Bold"  
-            Margin="79,71,64.6,427.6" RenderTransformOrigin="-0.155,-0.454" Grid.RowSpan="2"  />
-            <TextBlock x:Name="valuesElevator" 
+            Margin="79,71,64.2,427.6" RenderTransformOrigin="-0.155,-0.454" Grid.RowSpan="2"/>
+            <Label x:Name="valuesElevator" 
             FontSize="18" FontWeight="Bold"  
-            Text="{Binding Path= VM_Elevator_Change,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, StringFormat=N1}" Margin="371.4,0,23.6,393.6" Grid.Row="1" RenderTransformOrigin="-0.155,-0.454" Grid.Column="1"/>
+            Content="{Binding VM_Elevator_Change,UpdateSourceTrigger=PropertyChanged, StringFormat=N1}" Margin="6.4,71,36.2,401.6" RenderTransformOrigin="-0.155,-0.454" Grid.Column="2" Grid.RowSpan="2"/>
             <TextBlock x:Name="valuesAileron" 
             FontSize="18" FontWeight="Bold" Grid.Row ="0"
-            Text="{Binding Path= VM_Aileron_Change,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,StringFormat=N1 }" Margin="334.8,30,60.2,23" RenderTransformOrigin="-0.155,-0.454" Grid.Column="1">
+            Text="{Binding Path = VM_Aileron_Change ,UpdateSourceTrigger=PropertyChanged,StringFormat=N1 }" Margin="325.8,47,49.2,10" RenderTransformOrigin="-0.155,-0.454" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-            </TextBlock>
         </Grid>
     </Border>
 </UserControl>

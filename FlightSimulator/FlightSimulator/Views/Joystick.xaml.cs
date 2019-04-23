@@ -25,7 +25,7 @@ namespace FlightSimulator.Views
     {
         /// <summary>Current Aileron</summary>
         public static readonly DependencyProperty AileronProperty =
-            DependencyProperty.Register("Aileron", typeof(double), typeof(Joystick),null);
+            DependencyProperty.Register("Aileron", typeof(double), typeof(Joystick), null);
 
         /// <summary>Current Elevator</summary>
         public static readonly DependencyProperty ElevatorProperty =
@@ -40,9 +40,9 @@ namespace FlightSimulator.Views
             DependencyProperty.Register("ElevatorStep", typeof(double), typeof(Joystick), new PropertyMetadata(1.0));
 
         /* Unstable - needs work */
-        ///// <summary>Indicates whether the joystick knob resets its place after being released</summary>
-        //public static readonly DependencyProperty ResetKnobAfterReleaseProperty =
-        //    DependencyProperty.Register(nameof(ResetKnobAfterRelease), typeof(bool), typeof(VirtualJoystick), new PropertyMetadata(true));
+        // <summary>Indicates whether the joystick knob resets its place after being released</summary>
+        public static readonly DependencyProperty ResetKnobAfterReleaseProperty =
+           DependencyProperty.Register(nameof(ResetKnobAfterRelease), typeof(bool), typeof(Joystick), new PropertyMetadata(true));
 
         /// <summary>Current Aileron in degrees from 0 to 360</summary>
         public double Aileron
@@ -81,11 +81,11 @@ namespace FlightSimulator.Views
         }
 
         /// <summary>Indicates whether the joystick knob resets its place after being released</summary>
-        //public bool ResetKnobAfterRelease
-        //{
-        //    get { return Convert.ToBoolean(GetValue(ResetKnobAfterReleaseProperty)); }
-        //    set { SetValue(ResetKnobAfterReleaseProperty, value); }
-        //}
+        public bool ResetKnobAfterRelease
+        {
+            get { return Convert.ToBoolean(GetValue(ResetKnobAfterReleaseProperty)); }
+            set { SetValue(ResetKnobAfterReleaseProperty, value); }
+        }
 
         /// <summary>Delegate holding data for joystick state change</summary>
         /// <param name="sender">The object that fired the event</param>
@@ -115,7 +115,7 @@ namespace FlightSimulator.Views
         {
             InitializeComponent();
             vm = new JoystickViewModel();
-            this.DataContext = vm;
+            DataContext = vm;
             Knob.MouseLeftButtonDown += Knob_MouseLeftButtonDown;
             Knob.MouseLeftButtonUp += Knob_MouseLeftButtonUp;
             Knob.MouseMove += Knob_MouseMove;
@@ -149,11 +149,7 @@ namespace FlightSimulator.Views
             double distance = Math.Round(Math.Sqrt(deltaPos.X * deltaPos.X + deltaPos.Y * deltaPos.Y));
             if (distance >= canvasWidth / 2 || distance >= canvasHeight / 2)
                 return;
-            /*
-             * זה מה שהיה, אחרי השינוי זה למטה
-            Aileron = -deltaPos.Y;
-            Elevator = deltaPos.X;
-            */
+    
             Elevator = -deltaPos.Y / 124;
             Aileron = deltaPos.X / 124;
 

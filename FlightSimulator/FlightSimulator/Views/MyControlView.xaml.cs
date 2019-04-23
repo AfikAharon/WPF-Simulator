@@ -27,6 +27,7 @@ namespace FlightSimulator.Views
             InitializeComponent();
             vm = new JoystickViewModel();
             this.DataContext = vm;
+            myJoystick.DataContext = vm;
         }
         
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

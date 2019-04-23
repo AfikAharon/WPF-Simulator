@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FlightSimulator.Model
 {
@@ -12,6 +8,7 @@ namespace FlightSimulator.Model
         private double aileron;
         private double elevator;
         private double rudder;
+        private string aileronVal;
         private String[] command;
 
         public JoystickModel()
@@ -19,10 +16,25 @@ namespace FlightSimulator.Model
             rudder = 0.0;
             throttle = 0.0;
             aileron = 0.0;
-            elevator = 0.0; 
+            elevator = 0.0;
+            aileronVal = "";
             command = new string[1];
         }
 
+        public String Aileron_Val
+        {
+            get
+            {
+                return aileronVal;
+            }
+
+            set
+            {
+                this.aileronVal = value;
+                NotifyPropertyChanged("Aileron_Val");
+
+            }
+        }
         public Double Rudder_Change
         {
             get
@@ -79,7 +91,7 @@ namespace FlightSimulator.Model
             }
         }
 
-        
+
 
         public void moveThrottle()
         {
@@ -97,7 +109,7 @@ namespace FlightSimulator.Model
             Client client = Client.Instance;
             if (client.isConnected())
             {
-                command[0] = "set controls/flight/rudder " +this.rudder.ToString();
+                command[0] = "set /controls/flight/rudder " + this.rudder.ToString();
                 client.setListOfCommands(command);
                 client.handleCommand();
             }
@@ -109,6 +121,7 @@ namespace FlightSimulator.Model
             if (client.isConnected())
             {
                 command[0] = "set /controls/flight/elevator " + this.elevator.ToString();
+                Console.WriteLine("Elevator " + this.elevator);
                 client.setListOfCommands(command);
                 client.handleCommand();
             }
@@ -119,7 +132,7 @@ namespace FlightSimulator.Model
             Client client = Client.Instance;
             if (client.isConnected())
             {
-                command[0] = "set controls/flight/aileron " + this.aileron.ToString();
+                command[0] = "set /controls/flight/aileron " + this.aileron.ToString();
                 client.setListOfCommands(command);
                 client.handleCommand();
             }
