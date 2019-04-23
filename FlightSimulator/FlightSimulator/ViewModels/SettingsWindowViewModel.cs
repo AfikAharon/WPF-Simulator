@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace FlightSimulator.ViewModels
 {
-    class SettingsWindowViewModel : BaseNotify
+    public class SettingsWindowViewModel : BaseNotify
     {
 
         private ICommand _okCommand;
@@ -64,6 +64,14 @@ namespace FlightSimulator.ViewModels
             {
                 model.FlightInfoPort = value;
                 NotifyPropertyChanged("VM_FlightInfoPort");
+            }
+        }
+
+        public bool VM_CloseTheWindow
+        {
+            set
+            {
+                NotifyPropertyChanged("VM_CloseTheWindow");
             }
         }
 

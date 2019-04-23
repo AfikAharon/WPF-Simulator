@@ -14,13 +14,11 @@ namespace FlightSimulator.Model
 {
     public class TcpServer
     {
-        private IPEndPoint ep;
-
         private bool running; 
 
         #region Singleton
         private static TcpServer s_Instance = null;
-        private bool _notConnected;
+        volatile private bool _notConnected;
 
         public static TcpServer Instance
         {
@@ -49,15 +47,6 @@ namespace FlightSimulator.Model
         {
             if (! running) { 
                 ISettingsModel app = ApplicationSettingsModel.Instance;
-                //IPEndPoint ep = new IPEndPoint(IPAddress.Parse(app.FlightServerIP), app.FlightInfoPort);
-                //TcpListener listener = new TcpListener(ep);
-                //listener.Start();
-                //Console.WriteLine("Waiting for a client");
-                //TcpClient client = listener.AcceptTcpClient();
-                //Console.WriteLine("Client connected");
-
-                
-
                 //connect to the simulator
                 TcpListener server = new TcpListener(IPAddress.Parse(app.FlightServerIP), app.FlightInfoPort);
                 

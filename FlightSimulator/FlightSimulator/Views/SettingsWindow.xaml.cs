@@ -1,6 +1,7 @@
 ﻿using FlightSimulator.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +22,21 @@ namespace FlightSimulator.Views
     public partial class SettingsWindow : Window
     {
         private SettingsWindowViewModel vm;
-
+        
         public SettingsWindow()
         {
             InitializeComponent();
             vm = new SettingsWindowViewModel();
             this.DataContext = vm;
+            vm.PropertyChanged += Vm_PropertyChanged;
         }
 
+        private void Vm_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "VM_CloseTheWindow")
+            {
+                this.Close();
+            }
+        }
     }
 }

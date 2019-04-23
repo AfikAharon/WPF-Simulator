@@ -15,11 +15,13 @@ namespace FlightSimulator.Model
         private double _lon;
         private double _lat;
         private bool shouldStop;
+        private bool windowOpen;
 
 
         public FlightBoardModel()
         {
-            settingsWindow = new SettingsWindow();
+            windowOpen = false;
+            settingsWindow = null;
             this.shouldStop = false;
         }
 
@@ -59,15 +61,14 @@ namespace FlightSimulator.Model
             }
         }
 
-
-
-
-
         public void showSetting()
         {
-            settingsWindow.Close();
-            settingsWindow = new SettingsWindow();
-            settingsWindow.Show();
+            if (settingsWindow == null || !settingsWindow.IsLoaded)
+            {
+                settingsWindow = new SettingsWindow();
+                settingsWindow.Show();
+            }
+            
         }
         
     }

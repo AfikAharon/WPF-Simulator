@@ -9,7 +9,7 @@ using FlightSimulator.Model.Interface;
 
 namespace FlightSimulator.ViewModels
 {
-    class SettingsWindowModel : IModelNotify
+    public class SettingsWindowModel : IModelNotify
     {
         private String flightServerIp;
         private String flightInfoPort;
@@ -23,7 +23,6 @@ namespace FlightSimulator.ViewModels
             flightInfoPort = portAndIp.FlightInfoPort.ToString();
             flightCommandPort = portAndIp.FlightCommandPort.ToString();
         }
-
 
         public String FlightServerIp
         {
@@ -67,6 +66,14 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        public bool CloseTheWindow
+        {
+            set
+            {
+                NotifyPropertyChanged("CloseTheWindow");
+            }
+        }
+
         public void setValues()
         {
             if (flightCommandPort != portAndIp.FlightCommandPort.ToString())
@@ -81,6 +88,8 @@ namespace FlightSimulator.ViewModels
             {
                 portAndIp.FlightInfoPort = Int32.Parse(flightInfoPort);
             }
+            // close thw window by notify to the VM
+            CloseTheWindow = true;
         }
 
         public void restoreMembersValues()
@@ -88,6 +97,8 @@ namespace FlightSimulator.ViewModels
             FlightServerIp = portAndIp.FlightServerIP;
             FlightInfoPort = portAndIp.FlightInfoPort.ToString();
             FlightCommandPort = portAndIp.FlightCommandPort.ToString();
+            // close thw window by notify to the VM
+           CloseTheWindow = true;
         }
     }
 }
