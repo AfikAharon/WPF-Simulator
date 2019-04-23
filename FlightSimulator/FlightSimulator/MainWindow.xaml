@@ -7,7 +7,7 @@
         xmlns:import="clr-namespace:FlightSimulator.Views"
         mc:Ignorable="d"
         
-        Title="MainWindow" Height="700" Width="1400">
+        Title="MainWindow" Height="550" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

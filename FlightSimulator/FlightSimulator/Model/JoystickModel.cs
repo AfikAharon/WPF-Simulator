@@ -8,7 +8,7 @@ namespace FlightSimulator.Model
         private double aileron;
         private double elevator;
         private double rudder;
-        private string aileronVal;
+
         private String[] command;
 
         public JoystickModel()
@@ -17,24 +17,10 @@ namespace FlightSimulator.Model
             throttle = 0.0;
             aileron = 0.0;
             elevator = 0.0;
-            aileronVal = "";
             command = new string[1];
         }
 
-        public String Aileron_Val
-        {
-            get
-            {
-                return aileronVal;
-            }
 
-            set
-            {
-                this.aileronVal = value;
-                NotifyPropertyChanged("Aileron_Val");
-
-            }
-        }
         public Double Rudder_Change
         {
             get
