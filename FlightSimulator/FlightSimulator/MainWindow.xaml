@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FlightSimulator"
         xmlns:import="clr-namespace:FlightSimulator.Views"
         mc:Ignorable="d"
-        
+        Closing="Window_Closing"
         Title="MainWindow" Height="550" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>

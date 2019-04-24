@@ -19,14 +19,26 @@ namespace FlightSimulator
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool isClosed = false;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        //private void MyFlightBoard_Loaded(object sender, RoutedEventArgs e)
-        //{
+        private void MyFlightBoard_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.isClosed = true;
+        }
 
-       // }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBox.Show("Closing called");
+
+            if (this.isClosed)
+            {
+                MessageBox.Show("Closing called");
+
+            }
+        }
     }
 }
