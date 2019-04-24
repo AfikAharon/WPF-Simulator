@@ -31,9 +31,10 @@ namespace FlightSimulator.Model
             if (tcpServer.NotConnected)
             {
                 Thread serverThread = new Thread(() => tcpServer.Start(this));
+                serverThread.IsBackground = true;
                 serverThread.Start();
                 // backup  the thread for kill in the main window
-                //tcpServer.GetCurrentThread = serverThread;
+                tcpServer.GetCurrentThread = serverThread;
             }
             Client client = Client.Instance;
             client.establishConnection();

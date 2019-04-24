@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using FlightSimulator.Model;
-using FlightSimulator.Views;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Threading;
 using System.Windows.Media;
@@ -69,6 +64,7 @@ namespace FlightSimulator.ViewModels
             }
             set
             {
+                model.Background_Change = Brushes.Pink;
                 model.ListOfCommands = value;
                 NotifyPropertyChanged("VM_TextBoxCommands");
             }
@@ -81,6 +77,7 @@ namespace FlightSimulator.ViewModels
             if (client.IsConnected)
             {
                 Thread clientThread = new Thread(model.handleClient);
+                clientThread.IsBackground = true;
                 clientThread.Start();
                 client.GetCurrentThread = clientThread;
             }
@@ -89,6 +86,7 @@ namespace FlightSimulator.ViewModels
         public void clearCommands()
         {
             VM_TextBoxCommands = "";
+            VM_Background_Change = Brushes.White;
         }
     }
 }

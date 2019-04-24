@@ -20,7 +20,7 @@ namespace FlightSimulator.Model
 
         #region Singleton
         private static TcpServer s_Instance = null;
-        volatile private bool _notConnected;
+        private volatile bool _notConnected;
 
         public static TcpServer Instance
         {
@@ -63,7 +63,7 @@ namespace FlightSimulator.Model
 
         public void Start(FlightBoardModel flightBoard)
         {
-            GetCurrentThread = Thread.CurrentThread;
+            //GetCurrentThread = Thread.CurrentThread;
             if (! running) { 
                 ISettingsModel app = ApplicationSettingsModel.Instance;
                 //connect to the simulator
@@ -93,7 +93,7 @@ namespace FlightSimulator.Model
                     System.Console.WriteLine(ShouldStop);
                 }
             }
-
+            System.Console.WriteLine("finish");
             NotConnected = true;
         }
     }

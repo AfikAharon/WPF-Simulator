@@ -87,22 +87,26 @@ namespace FlightSimulator.ViewModels
         public void handleThrottle()
         {
             Thread handle = new Thread(model.moveThrottle);
+            handle.IsBackground = true;
             handle.Start();
         }
 
         public void handleRudder()
         {
             Thread handle = new Thread(model.moveRudder);
+            handle.IsBackground = true;
             handle.Start();
         }
         public void handleAileron()
         {
             Thread handle = new Thread(model.moveAileron);
+            handle.IsBackground = true;
             handle.Start();
         }
         public void handleElevator()
         {
             Thread handle = new Thread(model.moveElevator);
+            handle.IsBackground = true;
             handle.Start();
         }
     }
