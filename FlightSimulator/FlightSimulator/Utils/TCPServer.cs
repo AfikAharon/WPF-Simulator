@@ -34,7 +34,9 @@ namespace FlightSimulator.Model
             }
         }
         #endregion
-
+        /*
+         * Constructs a new TcpServer
+         */
         private TcpServer()
         {
             running = false;
@@ -43,24 +45,37 @@ namespace FlightSimulator.Model
             _currentThread = null;
         }
 
+        /*
+         * ShouldStop property, sets and returns the value
+         */
         public bool ShouldStop
         {
             get { return _shouldStop; }
             set { _shouldStop = value; }
         }
 
+        /*
+         * NotConnected property, sets and returns the value
+         */
         public bool NotConnected
         {
             get { return _notConnected; }
             set { _notConnected = value; }
         }
 
+        /*
+         * GetCurrentThread property, sets and returns the value
+         */
         public Thread GetCurrentThread
         {
             get { return _currentThread; }
             set { this._currentThread = value; }
         } 
 
+        /*
+         * The function starts the server, waits till we have connection from client, then starts reading the data
+         * and sends the Lon and Lat values to the given fligtBoard.
+         */
         public void Start(FlightBoardModel flightBoard)
         {
             //GetCurrentThread = Thread.CurrentThread;

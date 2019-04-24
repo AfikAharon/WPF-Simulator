@@ -15,6 +15,9 @@ namespace FlightSimulator.ViewModels
         private ICommand _clearCommand;
         private MyAutoPilotModel model;
 
+        /*
+         * Constructs a new MyAutoPilotViewModel
+         */
         public MyAutoPilotViewModel()
         {
             model = new MyAutoPilotModel();
@@ -24,7 +27,9 @@ namespace FlightSimulator.ViewModels
             };
         }
     
-
+        /*
+         * okCommandButton property, returns the value
+         */
        public ICommand okCommandButton
         {
             get
@@ -33,6 +38,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+        * clearCommandButton property, returns the value
+        */
         public ICommand clearCommandButton
         {
             get
@@ -41,6 +49,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * VM_Background_Change property, returns the value and sets the value
+        */
         public Brush VM_Background_Change
         {
             get
@@ -55,7 +66,9 @@ namespace FlightSimulator.ViewModels
         }
 
 
-
+        /*
+         * VM_TextBoxCommands property, returns the value and sets the value
+        */
         public String VM_TextBoxCommands
         {
             get
@@ -70,7 +83,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
-
+        /*
+         * The function sends all the commands in the auto pilot window to the client
+        */
         public void sendCommands()
         {
             Client client = Client.Instance;
@@ -83,6 +98,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+        * The function clears the textbox in the auto pilot
+        */
         public void clearCommands()
         {
             VM_TextBoxCommands = "";

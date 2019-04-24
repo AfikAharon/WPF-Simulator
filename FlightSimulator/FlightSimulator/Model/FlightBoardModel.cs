@@ -16,15 +16,19 @@ namespace FlightSimulator.Model
         private double _lat;
         private bool windowOpen;
 
-
+        /*
+         * Constructs a new FlightBoardModel
+         */
         public FlightBoardModel()
         {
             windowOpen = false;
             settingsWindow = null;
-            
         }
 
-
+        /*
+         * Creates a new TcpServer instance, Client instance, creating a new thread which runs the tcpServer.Start()
+         * function and establishing a connection.
+         */ 
         public void connect()
         {
             TcpServer tcpServer = TcpServer.Instance;
@@ -40,6 +44,9 @@ namespace FlightSimulator.Model
             client.establishConnection();
         }
 
+        /*
+         * Lon property, returns the value and sets the value
+         */
         public double Lon
         {
             get
@@ -53,6 +60,9 @@ namespace FlightSimulator.Model
             }
         }
 
+        /*
+         * Lat property, returns the value and sets the value
+         */
         public double Lat
         {
             get
@@ -66,6 +76,9 @@ namespace FlightSimulator.Model
             }
         }
 
+        /*
+         * Creates a new instance of settingsWindow and shows the window
+         */
         public void showSetting()
         {
             if (settingsWindow == null || !settingsWindow.IsLoaded)

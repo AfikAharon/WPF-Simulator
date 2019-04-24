@@ -13,12 +13,18 @@ namespace FlightSimulator.Model
         //private Client client;
         private Brush background;
 
+        /*
+         * Constructs a new MyAutoPilotModel
+         */
         public MyAutoPilotModel()
         {
             listOfCommands = "";
             Background_Change = Background_Change = Brushes.White;
         }
 
+        /*
+         * ListOfCommands property, returns the value and sets the value
+         */
         public String ListOfCommands
         {
             get
@@ -33,6 +39,9 @@ namespace FlightSimulator.Model
             }
         }
 
+        /*
+         * Background_Change property, returns the value and sets the value
+         */
         public Brush Background_Change
         {
             get
@@ -46,6 +55,10 @@ namespace FlightSimulator.Model
             }
         }
 
+        /*
+         * The handleClient() functions creates an instance of the client, see if the text has changed,
+         * if so, colors the background in pink, and sends the commands to the client
+         */
         public void handleClient()
         {
             Client client = Client.Instance;
