@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Sockets;
 using FlightSimulator.Model;
 using FlightSimulator.Model.Interface;
-
-
+using System.Threading;
 
 namespace FlightSimulator
 {
@@ -16,6 +15,7 @@ namespace FlightSimulator
         private TcpClient tcpClient;
         private String[] listOfCommands;
         ISettingsModel portAndIp;
+        private volatile Thread _currentThread;
 
         #region Singleton
         private static Client c_Instance = null;
@@ -34,7 +34,18 @@ namespace FlightSimulator
         private Client() {
             tcpClient = new TcpClient();
             portAndIp = ApplicationSettingsModel.Instance;
-            //tcpClient.Connect(portAndIp.FlightServerIP, portAndIp.FlightCommandPort);
+            _currentThread = null;
+        }
+
+        public bool IsConnected
+        {
+            get { return tcpClient.Connected; }
+        }
+
+        public Thread GetCurrentThread
+        {
+            get { return _currentThread; }
+            set { this._currentThread = value; }
         }
 
         public void handleCommand()
@@ -62,13 +73,8 @@ namespace FlightSimulator
                 tcpClient.Close();
             }
             TcpServer tcpServer = TcpServer.Instance;
-            while (tcpServer.notConncted()) ;
+            while (tcpServer.NotConnected);
             tcpClient.Connect(portAndIp.FlightServerIP, portAndIp.FlightCommandPort);
-        }
-
-        public bool isConnected()
-        {
-            return tcpClient.Connected;
         }
     }
 }

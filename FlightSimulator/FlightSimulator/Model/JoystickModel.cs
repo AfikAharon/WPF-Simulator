@@ -82,7 +82,7 @@ namespace FlightSimulator.Model
         public void moveThrottle()
         {
             Client client = Client.Instance;
-            if (client.isConnected())
+            if (client.IsConnected)
             {
                 command[0] = "set /controls/engines/current-engine/throttle " + this.throttle.ToString();
                 client.setListOfCommands(command);
@@ -93,7 +93,7 @@ namespace FlightSimulator.Model
         public void moveRudder()
         {
             Client client = Client.Instance;
-            if (client.isConnected())
+            if (client.IsConnected)
             {
                 command[0] = "set /controls/flight/rudder " + this.rudder.ToString();
                 client.setListOfCommands(command);
@@ -104,7 +104,7 @@ namespace FlightSimulator.Model
         public void moveElevator()
         {
             Client client = Client.Instance;
-            if (client.isConnected())
+            if (client.IsConnected)
             {
                 command[0] = "set /controls/flight/elevator " + this.elevator.ToString();
                 Console.WriteLine("Elevator " + this.elevator);
@@ -116,14 +116,12 @@ namespace FlightSimulator.Model
         public void moveAileron()
         {
             Client client = Client.Instance;
-            if (client.isConnected())
+            if (client.IsConnected && client.GetCurrentThread == null)
             {
                 command[0] = "set /controls/flight/aileron " + this.aileron.ToString();
                 client.setListOfCommands(command);
                 client.handleCommand();
             }
         }
-
-
     }
 }

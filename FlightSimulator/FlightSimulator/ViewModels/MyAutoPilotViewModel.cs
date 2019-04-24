@@ -77,8 +77,13 @@ namespace FlightSimulator.ViewModels
 
         public void sendCommands()
         {
-            Thread handle = new Thread(model.Start);
-            handle.Start();
+            Client client = Client.Instance;
+            if (client.IsConnected)
+            {
+                Thread clientThread = new Thread(model.handleClient);
+                clientThread.Start();
+                client.GetCurrentThread = clientThread;
+            }
         }
 
         public void clearCommands()

@@ -14,7 +14,6 @@ namespace FlightSimulator.Model
         private SettingsWindow settingsWindow;
         private double _lon;
         private double _lat;
-        private bool shouldStop;
         private bool windowOpen;
 
 
@@ -22,15 +21,20 @@ namespace FlightSimulator.Model
         {
             windowOpen = false;
             settingsWindow = null;
-            this.shouldStop = false;
+            
         }
 
 
         public void connect()
         {
             TcpServer tcpServer = TcpServer.Instance;
-            Thread serverThread = new Thread(() => tcpServer.Start(this, shouldStop));
-            serverThread.Start();
+            if (tcpServer.NotConnected)
+            {
+                Thread serverThread = new Thread(() => tcpServer.Start(this));
+                serverThread.Start();
+                // backup  the thread for kill in the main window
+                //tcpServer.GetCurrentThread = serverThread;
+            }
             Client client = Client.Instance;
             client.establishConnection();
         }

@@ -46,16 +46,18 @@ namespace FlightSimulator.Model
             }
         }
 
-        public void Start()
+        public void handleClient()
         {
             Client client = Client.Instance;
-            if (ListOfCommands != "" && client.isConnected()) { 
+            if (ListOfCommands != "") { 
                 Background_Change = Brushes.Pink;
                 String[] commands = listOfCommands.Split('\n');
                 client.setListOfCommands(commands);
                 client.handleCommand();
                 Background_Change = Brushes.White;
             }
+            // indication that the thread finish the operation
+            client.GetCurrentThread = null;
         }
     }
 }

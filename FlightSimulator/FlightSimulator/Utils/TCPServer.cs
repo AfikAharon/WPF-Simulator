@@ -14,7 +14,9 @@ namespace FlightSimulator.Model
 {
     public class TcpServer
     {
-        private bool running; 
+        private volatile bool running;
+        private volatile bool _shouldStop;
+        private volatile Thread _currentThread;
 
         #region Singleton
         private static TcpServer s_Instance = null;
@@ -31,20 +33,37 @@ namespace FlightSimulator.Model
                 return s_Instance;
             }
         }
-
-       
-
         #endregion
+
         private TcpServer()
         {
             running = false;
+            _shouldStop = false;
             _notConnected = true;
+            _currentThread = null;
         }
 
-
-
-        public void Start(FlightBoardModel flightBoard,bool shouldStop)
+        public bool ShouldStop
         {
+            get { return _shouldStop; }
+            set { _shouldStop = value; }
+        }
+
+        public bool NotConnected
+        {
+            get { return _notConnected; }
+            set { _notConnected = value; }
+        }
+
+        public Thread GetCurrentThread
+        {
+            get { return _currentThread; }
+            set { this._currentThread = value; }
+        } 
+
+        public void Start(FlightBoardModel flightBoard)
+        {
+            GetCurrentThread = Thread.CurrentThread;
             if (! running) { 
                 ISettingsModel app = ApplicationSettingsModel.Instance;
                 //connect to the simulator
@@ -54,10 +73,10 @@ namespace FlightSimulator.Model
 
                 //wait till we have a connection
                 TcpClient client = server.AcceptTcpClient();
-                _notConnected = false;
+                NotConnected = false;
                 NetworkStream stream = client.GetStream();
 
-                while (!shouldStop)
+                while (!ShouldStop)
                 {
                     byte[] buffer = new byte[client.ReceiveBufferSize];
                     int bytesRead = stream.Read(buffer, 0, client.ReceiveBufferSize);
@@ -71,14 +90,11 @@ namespace FlightSimulator.Model
                     double y = Convert.ToDouble(values[1]);
                     flightBoard.Lon = x;
                     flightBoard.Lat = y;
+                    System.Console.WriteLine(ShouldStop);
                 }
             }
-            _notConnected = true;
-        }
 
-        public bool notConncted()
-        {
-            return _notConnected;
+            NotConnected = true;
         }
     }
 }
