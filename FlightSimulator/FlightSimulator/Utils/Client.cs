@@ -31,23 +31,35 @@ namespace FlightSimulator
             }
         }
         #endregion
+        /*
+         * Constructs a new Client
+         */
         private Client() {
             tcpClient = new TcpClient();
             portAndIp = ApplicationSettingsModel.Instance;
             _currentThread = null;
         }
 
+        /*
+         * IsConnected property, returns the value
+         */
         public bool IsConnected
         {
             get { return tcpClient.Connected; }
         }
 
+        /*
+         * GetCurrentThread property, returns the value , and sets value
+         */
         public Thread GetCurrentThread
         {
             get { return _currentThread; }
             set { this._currentThread = value; }
         }
 
+        /*
+         * The function reads the commans given to him and then writes them, then sleeps for 2 seconds
+         */
         public void handleCommand()
         {
             NetworkStream stream = tcpClient.GetStream();
@@ -61,11 +73,17 @@ namespace FlightSimulator
             }
         }
 
+        /*/
+         * The function sets the listOfCommands given by the parameter
+         */
         public void setListOfCommands(string[] commands)
         {
             listOfCommands = commands;
         }
 
+        /*
+         * The function creates a new connection between the client and server, if was connected before, closes the connection
+         */
         public void establishConnection()
         {
             if (tcpClient.Connected)

@@ -11,6 +11,9 @@ namespace FlightSimulator.Model
 
         private String[] command;
 
+        /*
+         * Constructs a new JoystickModel
+         */
         public JoystickModel()
         {
             rudder = 0.0;
@@ -20,7 +23,9 @@ namespace FlightSimulator.Model
             command = new string[1];
         }
 
-
+        /*
+         * Rudder_Change property, returns the value and sets the value
+         */
         public Double Rudder_Change
         {
             get
@@ -35,6 +40,9 @@ namespace FlightSimulator.Model
             }
         }
 
+        /*
+         * Throttle_Change property, returns the value and sets the value
+         */
         public Double Throttle_Change
         {
             get
@@ -49,6 +57,9 @@ namespace FlightSimulator.Model
             }
         }
 
+        /*
+         * Aileron_Change property, returns the value and sets the value
+         */
         public Double Aileron_Change
         {
             get
@@ -63,6 +74,9 @@ namespace FlightSimulator.Model
             }
         }
 
+        /*
+         * Elevator_Change property, returns the value and sets the value
+         */
         public Double Elevator_Change
         {
             get
@@ -77,8 +91,10 @@ namespace FlightSimulator.Model
             }
         }
 
-
-
+        /*
+         * The function creates a new client instance, checks if connected, if so, sends via handleCommand() function 
+         * the throttle value as a string
+         */
         public void moveThrottle()
         {
             Client client = Client.Instance;
@@ -90,6 +106,10 @@ namespace FlightSimulator.Model
             }
         }
 
+        /*
+         * The function creates a new client instance, checks if connected, if so, sends via handleCommand() function 
+         * the rudder value as a string
+         */
         public void moveRudder()
         {
             Client client = Client.Instance;
@@ -101,6 +121,10 @@ namespace FlightSimulator.Model
             }
         }
 
+        /*
+         * The function creates a new client instance, checks if connected, if so, sends via handleCommand() function 
+         * the elevator value as a string
+         */
         public void moveElevator()
         {
             Client client = Client.Instance;
@@ -113,6 +137,10 @@ namespace FlightSimulator.Model
             }
         }
 
+        /*
+         * The function creates a new client instance, checks if connected, if so, sends via handleCommand() function 
+         * the aileron value as a string
+         */
         public void moveAileron()
         {
             Client client = Client.Instance;

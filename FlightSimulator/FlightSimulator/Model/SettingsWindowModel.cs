@@ -16,6 +16,9 @@ namespace FlightSimulator.ViewModels
         private String flightCommandPort;
         ISettingsModel portAndIp;
 
+        /*
+         * Constructs a new SettingsWindowModel
+         */
         public SettingsWindowModel()
         {
             portAndIp = ApplicationSettingsModel.Instance;
@@ -24,6 +27,9 @@ namespace FlightSimulator.ViewModels
             flightCommandPort = portAndIp.FlightCommandPort.ToString();
         }
 
+        /*
+         * FlightServerIp property, returns the value and sets the value
+         */
         public String FlightServerIp
         {
             get
@@ -38,6 +44,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * FlightInfoPort property, returns the value and sets the value
+         */
         public String FlightInfoPort
         {
             get
@@ -52,6 +61,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * FlightCommandPort property, returns the value and sets the value
+         */
         public String FlightCommandPort
         {
             get
@@ -66,6 +78,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * CloseTheWindow property,  sets the value
+         */
         public bool CloseTheWindow
         {
             set
@@ -74,6 +89,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * The function sets the ip and port values , by parsing them from the ApplicationSettingsModel
+         */
         public void setValues()
         {
             if (flightCommandPort != portAndIp.FlightCommandPort.ToString())
@@ -92,6 +110,9 @@ namespace FlightSimulator.ViewModels
             CloseTheWindow = true;
         }
 
+        /*
+         * The function resets the ip, port values
+         */
         public void restoreMembersValues()
         {
             FlightServerIp = portAndIp.FlightServerIP;

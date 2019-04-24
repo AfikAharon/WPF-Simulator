@@ -16,6 +16,9 @@ namespace FlightSimulator.ViewModels
         private ICommand _cancelCommand;
         private SettingsWindowModel model;
 
+        /*
+         * Constructs a new SettingsWindowViewModel
+         */
         public SettingsWindowViewModel()
         {
             model = new SettingsWindowModel();
@@ -25,6 +28,9 @@ namespace FlightSimulator.ViewModels
             };
         }
 
+        /*
+         * okCommandButton property, returns the value
+         */
         public ICommand okCommandButton
         {
             get
@@ -33,6 +39,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * cancelCommandButton property, returns the value
+         */
         public ICommand cancelCommandButton
         {
             get
@@ -41,6 +50,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * VM_FlightServerIp property, returns the value, and sets the value
+         */
         public String VM_FlightServerIp
         {
             get
@@ -54,6 +66,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * VM_FlightInfoPort property, returns the value, and sets the value
+         */
         public String VM_FlightInfoPort
         {
             get
@@ -67,6 +82,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * VM_CloseTheWindow property, sets the value
+         */
         public bool VM_CloseTheWindow
         {
             set
@@ -75,6 +93,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * VM_FlightCommandPort property, returns the value, and sets the value
+         */
         public String VM_FlightCommandPort
         {
             get
@@ -88,11 +109,17 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * Activates the setValues function in the model
+         */
         public void okCommand()
         {
             model.setValues();
         }
 
+        /*
+         * Activates the cancelCommand function in the model
+         */
         public void cancelCommand()
         {
             model.restoreMembersValues();

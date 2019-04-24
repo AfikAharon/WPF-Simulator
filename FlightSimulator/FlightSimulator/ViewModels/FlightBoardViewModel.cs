@@ -17,6 +17,9 @@ namespace FlightSimulator.ViewModels
         private ICommand _connectCommand;
         private FlightBoardModel model;
         
+        /*
+         * Constructs a new FlightBoardViewModel
+         */
         public FlightBoardViewModel()
         {
             model = new FlightBoardModel();
@@ -25,7 +28,10 @@ namespace FlightSimulator.ViewModels
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
         }
-        
+
+        /*
+         * VM_Lon property, returns the value and sets the value
+         */
         public double VM_Lon
         {
             get
@@ -39,6 +45,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * VM_Lat property, returns the value and sets the value
+         */
         public double VM_Lat
         {
             get
@@ -52,7 +61,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
-        
+        /*
+         * settingCommandButton property, returns the value
+         */
         public ICommand settingCommandButton
         {
             get
@@ -61,7 +72,9 @@ namespace FlightSimulator.ViewModels
             }
         }
 
-        
+        /*
+         * connectCommandButtom property, returns the value
+         */
         public ICommand connectCommandButton
         {
             get
@@ -70,11 +83,17 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        /*
+         * Activates the showSetting in the model
+         */
         public void settingButton()
         {
             model.showSetting();
         }
 
+        /*
+         * Activates the connect in the model
+         */
         public void connectButton()
         {
             model.connect();
