@@ -28,7 +28,8 @@ namespace FlightSimulator.ViewModels
         {
             get
             {
-                return model.Throttle_Change;
+                return System.Math.Round(model.Throttle_Change, 2); ;
+
             }
             set
             {
@@ -44,7 +45,7 @@ namespace FlightSimulator.ViewModels
         {
             get
             {
-                return model.Aileron_Change;
+                return System.Math.Round(model.Aileron_Change, 2); ;
             }
             set
             {
@@ -58,7 +59,7 @@ namespace FlightSimulator.ViewModels
         {
             get
             {
-                return model.Elevator_Change;
+                return System.Math.Round(model.Elevator_Change, 2); ;
             }
             set
             {
@@ -72,7 +73,7 @@ namespace FlightSimulator.ViewModels
         {
             get
             {
-                return model.Rudder_Change;
+                return System.Math.Round(model.Rudder_Change, 2); ;
             }
             set
             {

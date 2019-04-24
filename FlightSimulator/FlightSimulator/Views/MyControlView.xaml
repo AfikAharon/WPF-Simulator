@@ -86,11 +86,11 @@
             <Label x:Name="valuesRudder" 
             Content="{Binding Path = VM_Rudder_Change,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
             FontSize="18" FontWeight="Bold"  
-            Margin="6.8,412,36.2,73.6" Grid.Row="1" RenderTransformOrigin="-0.155,-0.454" Grid.Column="2" Grid.RowSpan="2"/>
+            Margin="192.2,273,10.4,112.6" Grid.Row="1" RenderTransformOrigin="-0.155,-0.454" Grid.Column="1"/>
             <Label x:Name="valuesThrottle" 
             Content="{Binding Path = VM_Throttle_Change ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
             FontSize="16" FontWeight="Bold"  
-            Margin="79,71,64.2,427.6" RenderTransformOrigin="-0.155,-0.454" Grid.RowSpan="2"/>
+            Margin="55,45,63.8,427.6" RenderTransformOrigin="-0.155,-0.454" Grid.RowSpan="2"/>
             <Label x:Name="valuesElevator" 
             FontSize="18" FontWeight="Bold"  
             Content="{Binding VM_Elevator_Change,UpdateSourceTrigger=PropertyChanged, StringFormat=N1}" Margin="229.2,45,91,427.6" RenderTransformOrigin="-0.155,-0.454" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
