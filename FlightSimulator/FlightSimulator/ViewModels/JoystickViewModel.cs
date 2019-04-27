@@ -105,6 +105,7 @@ namespace FlightSimulator.ViewModels
         public void handleThrottle()
         {
             Thread handle = new Thread(model.moveThrottle);
+            handle.IsBackground = true;
             handle.Start();
         }
 
@@ -115,6 +116,7 @@ namespace FlightSimulator.ViewModels
         public void handleRudder()
         {
             Thread handle = new Thread(model.moveRudder);
+            handle.IsBackground = true;
             handle.Start();
         }
 
@@ -125,6 +127,7 @@ namespace FlightSimulator.ViewModels
         public void handleAileron()
         {
             Thread handle = new Thread(model.moveAileron);
+            handle.IsBackground = true;
             handle.Start();
         }
 
@@ -135,6 +138,7 @@ namespace FlightSimulator.ViewModels
         public void handleElevator()
         {
             Thread handle = new Thread(model.moveElevator);
+            handle.IsBackground = true;
             handle.Start();
         }
     }

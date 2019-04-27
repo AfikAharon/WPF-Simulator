@@ -62,7 +62,7 @@ namespace FlightSimulator.Model
         {
             Client client = Client.Instance;
             if (ListOfCommands != "") { 
-                Background_Change = Brushes.Pink;
+                //Background_Change = Brushes.Pink;
                 String[] commands = listOfCommands.Split('\n');
                 client.setListOfCommands(commands);
                 client.handleCommand();
