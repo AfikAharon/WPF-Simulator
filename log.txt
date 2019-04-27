@@ -1,0 +1,219 @@
+commit ac91b989fd7f71b0fae6daee9fb6917f5870c6f0
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 24 18:18:05 2019 +0300
+
+    coding style
+
+commit 5a932ad2828ac32e15349f33e79ecd71095ac276
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Wed Apr 24 19:18:18 2019 +0300
+
+    a
+
+commit 77a53882072c77f1fa319f8b3c2f06372dea1830
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 24 14:47:02 2019 +0300
+
+    commit
+
+commit 9a5f4706b25345ed53d40bea0a10e12263c7c0ab
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 24 14:46:54 2019 +0300
+
+    comit
+
+commit 58590c33186d2449096bdbfd55ebf5f88607c6d7
+Merge: 3169f4b 949a199
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 24 13:11:03 2019 +0300
+
+    comi
+
+commit 949a199f9c6c664c82608c0712f08ba430980226
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Wed Apr 24 16:03:59 2019 +0300
+
+    Auto pilot
+
+commit 3169f4b92d43b453d493c225e6e7e9826b244f9a
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 24 13:09:54 2019 +0300
+
+    stash
+
+commit 3cc6851b5d1629ace864c33d51612a6f5fcd59d1
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 24 12:52:02 2019 +0300
+
+    view control final
+
+commit 92394e3281d02f96624b60f51266a6a22afe19f2
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 24 12:35:41 2019 +0300
+
+    values update
+
+commit a961ff37d987f63aeb65b65d6039ae19dcf94b82
+Merge: af19c8c 2d3bd37
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Tue Apr 23 20:44:49 2019 +0300
+
+    Merge branch 'master' of https://github.com/AfikAharon/WPF-Simulator
+
+commit af19c8c3e44149b2c9e21ac9a100956b6f7523c9
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Tue Apr 23 20:44:37 2019 +0300
+
+    jj
+
+commit 2d3bd37d7e1d6e4dc7839df15ec270c0f9c48c30
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Tue Apr 23 20:41:03 2019 +0300
+
+    commit
+
+commit d869faf987a0b3954b4628568b9e165b75b4a98e
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Tue Apr 23 19:24:30 2019 +0300
+
+    final update for joystick
+
+commit c2583c82c24d62e862ee66802663527c6275a34c
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Tue Apr 23 16:22:56 2019 +0300
+
+    view update
+
+commit e6875f9cb759b9d342e07e5ae2eeb7dc84c76a1c
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Sun Apr 21 20:23:39 2019 +0300
+
+    server update
+
+commit c35c31ea160104520a1a1ea78f791c45be80c60c
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Sun Apr 21 19:44:10 2019 +0300
+
+    Server
+
+commit 17611bbaf8e2ace13f3e557693169876337c190c
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Sat Apr 20 18:58:56 2019 +0300
+
+    joystick working commit
+
+commit 4f2bf6fbd940b5a6d106f3d78c0cab18d4fe3f8a
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Fri Apr 19 14:04:34 2019 +0300
+
+    Fix auto pilot
+
+commit 341b40919517a69636a2352408a84dca5de2e267
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Fri Apr 19 12:25:14 2019 +0300
+
+    SettingWindow
+
+commit 4f1a27b46aa1f3e91fd238482cd1c67365e7cff0
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Wed Apr 17 22:20:24 2019 +0300
+
+    Auto pilot commit
+
+commit 7c8e4229edd73563f179ffea64ff61599402475d
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Wed Apr 17 20:28:02 2019 +0300
+
+    Auto pilot update
+
+commit d7de887d6d223d50e1cf09af8e3a603e66852299
+Merge: dbf70a9 ac6019e
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 17 16:25:38 2019 +0300
+
+    commit stage
+
+commit ac6019eec92a2f605298a385eef85acd65324177
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Wed Apr 17 19:18:00 2019 +0300
+
+    commit
+
+commit dbf70a9a81a4383ac2d37233b111601de59aeb99
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 17 16:24:09 2019 +0300
+
+    commit stage
+
+commit effa600c1d95e0e5fbaf27e40d164d324c23d790
+Merge: 4c315ee d1cd4fc
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Wed Apr 17 15:01:50 2019 +0300
+
+    Merge branch 'master' of https://github.com/AfikAharon/WPF-Simulator
+
+commit 4c315eef15618e8d7d4d89d64b54b5345de07824
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Wed Apr 17 15:01:14 2019 +0300
+
+    Client
+
+commit d1cd4fc65b677fd883de50e220d35441adcb9727
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 17 11:57:20 2019 +0300
+
+    update
+
+commit a0eca2a450b0fbc3c6afa477b0e96dacc8651be7
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Wed Apr 17 11:54:53 2019 +0300
+
+    OK CLEAR UPDATE
+
+commit 351e380fbf150e78fffcfc72a71f8a6657cd6888
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Tue Apr 16 15:43:41 2019 +0300
+
+    serverCommit
+
+commit 532746726c1f6ccadcba4e87fde56b5e172bab02
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Mon Apr 15 20:10:58 2019 +0300
+
+    update test
+
+commit 2ea7ae7d4a11db0834271771bbd6328502e273c8
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Mon Apr 15 20:10:32 2019 +0300
+
+    update test
+
+commit b81ab8731721fc733d03c0e7f2ef6653ff4eb1b4
+Author: Eliran Darshan <eliran.darshan@live.biu.ac.il>
+Date:   Mon Apr 15 16:54:54 2019 +0300
+
+    first update
+
+commit ca9e995bdf4731f9a1aa6d5b08591260705b511e
+Author: AfikAharon <45853376+AfikAharon@users.noreply.github.com>
+Date:   Mon Apr 8 20:16:20 2019 +0300
+
+    Add files via upload
+
+commit d3c8e00ce4828d6001d8606565ab8b0bdd119d02
+Author: AfikAharon <45853376+AfikAharon@users.noreply.github.com>
+Date:   Mon Apr 8 20:13:05 2019 +0300
+
+    Add files via upload
+
+commit 5f7703220f55364b03fef23e9ca0f7d99b30c7f8
+Author: Afik Aharon <afik.aharon@live.biu.ac.il>
+Date:   Mon Apr 8 20:07:45 2019 +0300
+
+    first
+
+commit c7974eed7979c44987d854f24f56081d8c76fb48
+Author: AfikAharon <45853376+AfikAharon@users.noreply.github.com>
+Date:   Mon Apr 8 20:03:54 2019 +0300
+
+    Initial commit

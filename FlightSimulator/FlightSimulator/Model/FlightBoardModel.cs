@@ -36,8 +36,7 @@ namespace FlightSimulator.Model
             {
                 Thread serverThread = new Thread(() => tcpServer.Start(this));
                 serverThread.Start();
-                // backup  the thread for kill in the main window
-                //tcpServer.GetCurrentThread = serverThread;
+ 
             }
             Client client = Client.Instance;
             client.establishConnection();
@@ -55,7 +54,7 @@ namespace FlightSimulator.Model
             set
             {
                 this._lon = value;
-                NotifyPropertyChanged("Lon");
+               // NotifyPropertyChanged("Lon");
             }
         }
 

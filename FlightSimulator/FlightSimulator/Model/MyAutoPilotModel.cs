@@ -10,7 +10,6 @@ namespace FlightSimulator.Model
     class MyAutoPilotModel : IModelNotify
     {
         private String listOfCommands;
-        //private Client client;
         private Brush background;
 
         /*

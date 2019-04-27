@@ -16,6 +16,8 @@ namespace FlightSimulator.Model
     {
         private volatile bool running;
         private volatile bool _shouldStop;
+        private bool firstData;
+        private int counter;
         private volatile Thread _currentThread;
 
         #region Singleton
@@ -43,6 +45,9 @@ namespace FlightSimulator.Model
             _shouldStop = false;
             _notConnected = true;
             _currentThread = null;
+            firstData = false;
+            counter = 0;
+
         }
 
         /*
@@ -98,14 +103,26 @@ namespace FlightSimulator.Model
                     string received = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
                     Console.WriteLine("Received from client:" + received);
-
+                    if (firstData)
+                    {
+                        string[] values = received.Split(',');
+                        double x = Convert.ToDouble(values[0]);
+                        double y = Convert.ToDouble(values[1]);
+                        flightBoard.Lon = x;
+                        flightBoard.Lat = y;
+                        System.Console.WriteLine(ShouldStop);
+                    } else
+                    {
+                        if (counter == 2)
+                        {
+                            firstData = true;
+                        } else
+                        {
+                            counter++;
+                        }
+                    }
                     
-                    string[] values = received.Split(',');
-                    double x = Convert.ToDouble(values[0]);
-                    double y = Convert.ToDouble(values[1]);
-                    flightBoard.Lon = x;
-                    flightBoard.Lat = y;
-                    System.Console.WriteLine(ShouldStop);
+                    
                 }
             }
 
